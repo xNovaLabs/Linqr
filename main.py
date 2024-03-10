@@ -141,7 +141,7 @@ async def generate(ctx):
 
                         if ("Subdomains" in response.text):
                             os.system(f"curl -H \"Content-Type: application/json\" -d '\"{domain}\"' \"http://localhost:2024/config/apps/http/servers/srv0/routes/0/match/0/host\"")
-                            with open("domains.txt") as f:
+                            with open("domains.txt", "w") as f:
                                  f.write("\nhttps://"+ subdomain + "." + domain + "/")
                             await ctx.send("https://" + subdomain + "." + domain + "/")
                         else:
