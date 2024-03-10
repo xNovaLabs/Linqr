@@ -140,7 +140,7 @@ async def generate(ctx):
                         response = r.post('https://freedns.afraid.org/subdomain/save.php', params=params, headers=headers, data=data)
 
                         if ("Subdomains" in response.text):
-                            os.system(f"curl -H \"Content-Type: application/json\" -d '\"{domain}\"' \"http://localhost:2024/config/apps/http/servers/srv0/routes/0/match/0/host\"")
+                            os.system(f"curl -H \"Content-Type: application/json\" -d '\"{subdomain}.{domain}\"' \"http://localhost:2024/config/apps/http/servers/srv0/routes/0/match/0/host\"")
                             with open("domains.txt", "w") as f:
                                  f.write("\nhttps://"+ subdomain + "." + domain + "/")
                             await ctx.send("https://" + subdomain + "." + domain + "/")
