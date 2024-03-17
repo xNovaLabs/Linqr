@@ -37,13 +37,18 @@ async def updateReg(ctx):
 
 @bot.command()
 async def checkdns(ctx, domain):
+  try:
+    
      answers = dns.resolver.resolve(domain, 'A')
-
      for server in answers:
           await ctx.send(server)
+  except:
+    await ctx.send("No DNS Records Available.")
+
       
 @bot.command()
 async def validdns(ctx, domain):
+  try:
      answers = dns.resolver.resolve(domain, 'A')
      hi = False
      for server in answers: 
@@ -52,24 +57,30 @@ async def validdns(ctx, domain):
                hi = True
      if not hi:
         await ctx.send("Invalid DNS. Point A record to 207.231.108.250")
+  except:
+        await ctx.send("No DNS Records Available.")
 
 
 @bot.command()
 async def byod(ctx, domain):
-  answers = dns.resolver.resolve(domain, 'A')
-  hi = False
-  for server in answers: 
-          if ('207.231.108.250' in str(server)):
-               await ctx.send("Valid DNS, proceeding to add...")
-               hi = True
-  if not hi:
-        await ctx.send("Invalid DNS. Point A record to 207.231.108.250")
-  if hi:
-    os.system(f"curl -H \"Content-Type: application/json\" -d '\"{domain}\"' \"http://localhost:2024/config/apps/http/servers/srv0/routes/0/match/0/host\"")
-    await ctx.send("Domain Succesfully Added! (hopefully)")
-    await ctx.send("https://" + domain)
-    channel = bot.get_channel(1219014618362675352)
-    await channel.send("New Xen Domain: https://" + domain + " | Created by: " + ctx.message.author.tag)
+  try:
+    
+    answers = dns.resolver.resolve(domain, 'A')
+    hi = False
+    for server in answers: 
+            if ('207.231.108.250' in str(server)):
+                await ctx.send("Valid DNS, proceeding to add...")
+                hi = True
+    if not hi:
+          await ctx.send("Invalid DNS. Point A record to 207.231.108.250")
+    if hi:
+      os.system(f"curl -H \"Content-Type: application/json\" -d '\"{domain}\"' \"http://localhost:2024/config/apps/http/servers/srv0/routes/0/match/0/host\"")
+      await ctx.send("Domain Succesfully Added! (hopefully)")
+      await ctx.send("https://" + domain)
+      channel = bot.get_channel(1219014618362675352)
+      await channel.send("New Xen Domain: https://" + domain + " | Created by: " + ctx.message.author.tag)
+  except:
+      await ctx.send("No DNS Records Available.")
       
     
 
