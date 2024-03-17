@@ -12,6 +12,7 @@ colored-traceback==0.3.0
 crypto==1.4.1
 cryptography==42.0.5
 discord.py==2.3.2
+dnspython==2.6.1
 frozenlist==1.4.1
 idna==3.6
 intervaltree==3.1.0
@@ -40,9 +41,13 @@ PyYAML==6.0.1
 requests==2.31.0
 ROPGadget==7.4
 rpyc==6.0.0
-setuptools==69.1.1
 shellescape==3.8.1
 six==1.16.0
 sortedcontainers==2.4.0
 soupsieve==2.5
 tempmail-python==2.3.3
+unicorn==2.0.1.post1
+unix-ar==0.2.1
+urllib3==2.2.1
+yarl==1.9.4
+zstandard==0.22.0
