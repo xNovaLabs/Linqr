@@ -165,7 +165,7 @@ async def generate(ctx):
                         print("ho")
                         if ("Subdomains" in response.text):
                             print("hi")
-                            with open("domains.txt", "w") as f:
+                            with open("domains.txt", "a+") as f:
                                  f.write('\n'+ subdomain + "." + domain)
                             embed = discord.Embed(title="Succesfully Created Domain",
                                     description="Congratulations, our system indicates that the domain has been created with the A record set to our server. Now, you will need to first use the /dig command to check whether the A record is correctly set. Then, you will have to use the /byod command to add the domain to Xen.",
