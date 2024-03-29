@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup as bs
 import blockUtil
 import string
 import random
-import datetimec
+from datetime import datetime
 
 bot = commands.Bot(command_prefix='/', intents=discord.Intents.all())
 r = requests.Session()
