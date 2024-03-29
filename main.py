@@ -162,7 +162,8 @@ async def generate(ctx):
                         }
 
                         response = r.post('https://freedns.afraid.org/subdomain/save.php', params=params, headers=headers, data=data)
-                        await ctx.send(response.text)
+                        with open("log.txt", "w") as f:
+                            f.write(response.text)
                         if ("Subdomains" in response.text):
                             print("hi")
                             with open("domains.txt", "w") as f:
@@ -181,7 +182,6 @@ async def generate(ctx):
                                                 inline=False)
 
                                  embed.set_footer(text="made by xenon.")
-                                 await ctx.send(embed=embed)
                         else:
                             embed = discord.Embed(title="Invalid Captcha!",
                                 description="Please try again. Our system has detected that the captcha you have submitted was incorrect.",
