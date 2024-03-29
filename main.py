@@ -181,6 +181,7 @@ async def generate(ctx):
                                                 inline=False)
 
                             embed.set_footer(text="made by xenon.")
+                            await ctx.send(embed=embed)
                         else:
                             embed = discord.Embed(title="Invalid Captcha!",
                                 description="Please try again. Our system has detected that the captcha you have submitted was incorrect.",
