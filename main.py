@@ -167,20 +167,20 @@ async def generate(ctx):
                             print("hi")
                             with open("domains.txt", "w") as f:
                                  f.write('\n'+ subdomain + "." + domain)
-                                 embed = discord.Embed(title="Succesfully Created Domain",
+                            embed = discord.Embed(title="Succesfully Created Domain",
                                     description="Congratulations, our system indicates that the domain has been created with the A record set to our server. Now, you will need to first use the /dig command to check whether the A record is correctly set. Then, you will have to use the /byod command to add the domain to Xen.",
                                     colour=0x930dee,
                                     timestamp=datetime.now())
 
-                                 embed.set_author(name="Xenon+",
+                            embed.set_author(name="Xenon+",
                                                 url="https://xenub.com",
                                                 icon_url="https://images-ext-1.discordapp.net/external/jFiWrY9F9UPppdB7iVpm5VMIjKNeVI9h_FRg_CseM40/%3Fsize%3D4096/https/cdn.discordapp.com/icons/1175543646217580704/a0cfabf748577517086a2c3c9c04eaba.png?format=webp&quality=lossless&width=348&height=348")
 
-                                 embed.add_field(name="Domain:",
+                            embed.add_field(name="Domain:",
                                                 value=(subdomain).lower() + "." + domain,
                                                 inline=False)
 
-                                 embed.set_footer(text="made by xenon.")
+                            embed.set_footer(text="made by xenon.")
                         else:
                             embed = discord.Embed(title="Invalid Captcha!",
                                 description="Please try again. Our system has detected that the captcha you have submitted was incorrect.",
