@@ -162,8 +162,9 @@ async def generate(ctx):
                         }
 
                         response = r.post('https://freedns.afraid.org/subdomain/save.php', params=params, headers=headers, data=data)
-
+                        await ctx.send(response.text)
                         if ("Subdomains" in response.text):
+                            print("hi")
                             with open("domains.txt", "w") as f:
                                  f.write('\n'+ subdomain + "." + domain)
                                  embed = discord.Embed(title="Succesfully Created Domain",
