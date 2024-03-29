@@ -127,7 +127,7 @@ async def generate(ctx):
 
                         embed.set_footer(text="made by xenon.")
 
-                        await ctx.send(embed=embed)
+                        await ctx.send(file=files, embed=embed)
                         os.remove("captcha.png")
 
                         def check(msg):
@@ -349,7 +349,7 @@ async def contribute(ctx):
 
             embed.set_footer(text="made by xenon.")
 
-            await ctx.send(embed=embed)
+            await ctx.send(file=files, embed=embed)
             os.remove("captcha.png")
 
             def check(msg):
