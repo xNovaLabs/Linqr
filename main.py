@@ -162,8 +162,7 @@ async def generate(ctx):
                         }
 
                         response = r.post('https://freedns.afraid.org/subdomain/save.php', params=params, headers=headers, data=data)
-                        with open("log.txt", "w") as f:
-                            f.write(response.text)
+                        print("ho")
                         if ("Subdomains" in response.text):
                             print("hi")
                             with open("domains.txt", "w") as f:
