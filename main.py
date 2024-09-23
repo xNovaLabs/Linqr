@@ -434,4 +434,4 @@ async def contribute(ctx):
 
 
 
-bot.run("MTE3ODg5ODczNzk5MzYyOTc2Ng.G84QDP.xn_OwF7cYP6MBlg-eJx8vI7M2ALUIbpkcjVszg")
+bot.run("tokenhere")
